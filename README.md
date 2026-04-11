@@ -90,6 +90,13 @@ https://github.com/user-attachments/assets/49bc12b2-abaf-45de-a21c-67aacd9bb872
 
 - inside the install-scripts directory, you can edit 00-hypr-pkgs.sh. Care though as the Hyprland Dots may not work properly!
 
+#### 🧭 Local preset and runbook
+
+- For a fresh `CachyOS` or minimal `Arch` reinstall on Intel graphics with `SDDM`, use the local preset at `presets/cachyos-intel-sddm.sh`
+- Start the installer with `./tools/run-cachyos-intel-install.sh`
+- Follow the full reinstall flow in `docs/cachyos-reinstall-runbook.md`
+- After first boot, verify the install with `./tools/verify-cachyos-hyprland.sh`
+
 #### 🚩 Switching to SDDM assuming you have GDM installed and running
 
 - if you really want switch to SDDM from GDM, you need to disable the gdm first.
