@@ -33,6 +33,12 @@ hypr_package=(
   playerctl
   python-requests
   python-pyquery
+  fcitx5
+  fcitx5-chinese-addons
+  fcitx5-chewing
+  fcitx5-configtool
+  fcitx5-gtk
+  fcitx5-qt
   qt5ct
   qt6ct
   qt6-svg

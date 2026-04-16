@@ -1,0 +1,206 @@
+{
+  "_metadata": {
+    "last_updated": "2026-04-17T00:48:18+08:00",
+    "source": "session-sync"
+  },
+  "development_index": {
+    "feature": [],
+    "enhancement": [
+      {
+        "title": "Installer package manifest catches up with Fcitx5 desktop input stack",
+        "sub_feature": "input-method",
+        "date": "2026-04-17",
+        "description": "Recovered current session progress from git diff because no workflow session file was present. The active work adds fcitx5 core, Chinese addons, Chewing, the config tool, and GTK / Qt bridge packages to install-scripts/01-hypr-pkgs.sh so a fresh CachyOS Hyprland install can land with the expected desktop input-method stack instead of only relying on later runtime configuration.",
+        "status": "in_progress",
+        "session_id": "SESSION-20260417-004812-fcitx5-install-sync"
+      },
+      {
+        "title": "Fcitx5 traditional Chinese input method clarification",
+        "sub_feature": "input-method",
+        "date": "2026-04-13",
+        "description": "Confirmed that the desktop should keep pinyin as the default Fcitx5 input method while adding a separate traditional Chinese option, clarified that Chewing is the Zhuyin/New Chewing path rather than a pinyin-based traditional layout, and recorded the need to prefer Rime for pinyin-to-traditional workflows.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "CachyOS Hyprland desktop bootstrap and localization",
+        "sub_feature": "hypr",
+        "date": "2026-04-12",
+        "description": "Applied persistent wallpaper startup using the installed wallpaper backend, raised Hyprland scaling for readability, enabled fcitx5 input method integration, switched the system locale to zh_CN.UTF-8, and validated shell autosuggestion visibility changes before restoring the original shell colors for comparison.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "SDDM login wallpaper selector and form sizing",
+        "sub_feature": "sddm",
+        "date": "2026-04-12",
+        "description": "Added a rofi-based SDDM wallpaper selection path separate from the desktop wallpaper flow, switched the login wallpaper scripts to the installed awww backend, and enlarged the login form plus power buttons while leaving clock/date sizing unchanged.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "CachyOS Hyprland desktop package inventory",
+        "sub_feature": "hypr",
+        "date": "2026-04-12",
+        "description": "Recorded the currently confirmed desktop stack installed on this CachyOS system after the reinstall and Hyprland setup.",
+        "status": "completed",
+        "session_id": null,
+        "packages": [
+          "hyprland",
+          "hyprlock",
+          "hypridle",
+          "waybar",
+          "swaync",
+          "sddm",
+          "pipewire",
+          "wireplumber",
+          "pipewire-pulse",
+          "xdg-desktop-portal-hyprland",
+          "fcitx5",
+          "fcitx5-chinese-addons",
+          "fcitx5-configtool",
+          "fcitx5-qt",
+          "awww",
+          "wallust",
+          "rofi",
+          "kitty",
+          "qt5ct",
+          "qt6ct",
+          "kvantum",
+          "hyprpolkitagent",
+          "cliphist",
+          "grim",
+          "gvfs",
+          "gvfs-mtp",
+          "imagemagick",
+          "inxi",
+          "jq",
+          "network-manager-applet",
+          "pamixer",
+          "pavucontrol",
+          "playerctl",
+          "python-pyquery",
+          "python-requests",
+          "slurp",
+          "swappy",
+          "unzip",
+          "wget",
+          "wl-clipboard",
+          "wlogout",
+          "xdg-user-dirs",
+          "xdg-utils",
+          "yad",
+          "quickshell"
+        ]
+      },
+      {
+        "title": "Waybar sizing and cursor behavior refresh",
+        "sub_feature": "waybar",
+        "date": "2026-04-12",
+        "description": "Introduced a shared Waybar wrapper so every theme variant now loads a common override that slightly increases component scale and restores pointer cursors on clickable widgets; switched the style switchers to route through the shared active-theme file. A snapper pre-change snapshot was then created successfully as snapshot 153 for recovery reference.",
+        "status": "completed",
+        "session_id": null
+      },
+    {
+      "title": "Waybar sizing follow-up",
+      "sub_feature": "waybar",
+      "date": "2026-04-12",
+      "description": "Raised the shared Waybar override, then fixed the live-path mismatch and GTK CSS compatibility issues by syncing the wrapper files into ~/.config/waybar, importing the active theme before the shared overrides, removing unsupported cursor and !important declarations, correcting the active theme's relative imports for wallust and catppuccin assets, and settling on a 102% base font size so the sizing changes apply on the running desktop without overshooting.",
+      "status": "completed",
+      "session_id": null
+    },
+    {
+      "title": "QuickShell workspace thumbnail fallback",
+      "sub_feature": "quickshell",
+      "date": "2026-04-15",
+      "description": "The empty workspace cards in the rofi-like 1x5 overview carousel were switched from a ShaderEffectSource path to a direct wallpaper Image using Appearance.background_image, then hardened first with a file:/// URL and finally with Qt.resolvedUrl(); when that still proved unreliable, the wallpaper pipeline started copying the current image to ~/.cache/quickshell/wallpaper_thumbnail.png so Qt Image can load a normal PNG path. The final fix landed in overview/common/Appearance.qml, which is the file this overview tree actually imports, and the temporary magenta / status-text debug layer was removed after verification. The carousel was then visually refined by darkening empty wallpapers, making workspace numbers more prominent, adding gaps between cards, widening the popup, smoothing the transition animations, and later layering distance-based size and fade behavior to make non-selected previews recede more naturally. The latest change restored a more consistent spacing rhythm, narrowed the popup width, raised the center card height slightly, and kept blur / overlay removed from non-empty workspace previews so only empty cards keep the wallpaper dimming treatment.",
+      "status": "completed",
+      "session_id": null
+    },
+    {
+      "title": "SDDM login-page contrast follow-up",
+      "sub_feature": "sddm",
+      "date": "2026-04-12",
+      "description": "Login-page username, password, and system-button colors still need a final contrast choice; keep the clock/date sizing as-is and revisit the palette if the current warm text colors remain too faint on future wallpapers.",
+        "status": "pending",
+        "session_id": null
+      }
+    ],
+    "bugfix": [
+      {
+        "title": "Waybar theme refresh follows rofi wallust changes",
+        "sub_feature": "waybar",
+        "date": "2026-04-12",
+        "description": "Fixed the currently active Waybar theme so the static catppuccin layer loads before wallust colors. This lets the wallust palette selected from the rofi global theme switcher override the base theme immediately after Refresh.sh, without requiring a manual day/night toggle in Waybar.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "Waybar legacy import normalization",
+        "sub_feature": "waybar",
+        "date": "2026-04-12",
+        "description": "Normalized the full Waybar theme set so old wallust and catppuccin import paths now resolve correctly from the live ~/.config/waybar tree and the repository copy. This prevents theme switches from killing Waybar when rofi lands on an older mixed theme or a wallust-only variant.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "Waybar refresh hardening",
+        "sub_feature": "waybar",
+        "date": "2026-04-12",
+        "description": "Hardened the refresh flow used by the global theme switcher so Waybar is allowed to exit cleanly before relaunch, and the restart uses nohup plus a post-start reload instead of sending SIGUSR1 to the bar during the refresh window.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "Waybar mode overlay rollback",
+        "sub_feature": "waybar",
+        "date": "2026-04-13",
+        "description": "Rolled back the temporary DarkLight-generated Waybar mode overlay and restored the previous wrapper setup, so light and dark mode no longer introduce an extra visible bar change beyond the standard wallpaper and appearance sync.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "QuickShell overview restore and Waybar fallback",
+        "sub_feature": "hypr",
+        "date": "2026-04-12",
+        "description": "Installed the CachyOS quickshell package, copied the overview config tree into ~/.config/quickshell so Super+A can launch the overview again, and added a Waybar restart fallback that restores a known-good theme if the selected style crashes on refresh. The pacman transaction created snapper root snapshots 155 and 156 automatically.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "QuickShell workspace popup carousel styling",
+        "sub_feature": "quickshell",
+        "date": "2026-04-15",
+        "description": "Reworked the Quickshell overview into a rofi-like popup container that holds a horizontal five-slot workspace carousel, keeps the original workspace card styling, adds edge reveal with fade and scale falloff, and wraps first/last navigation for infinite switching. The first pass had the container sized through the wrong implicit dimension, which collapsed the popup and made only one preview visible; that sizing bug was corrected in the current live and repo copies. Empty workspace cards were then tuned to use wallpaper thumbnails as their background, with a dim overlay so they no longer flash as bright white blocks. A pre-change snapper snapshot was attempted, but the session lacked the permissions needed to create it, so the change currently relies on existing recovery points.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "Waybar mode-vs-style clarification",
+        "sub_feature": "waybar",
+        "date": "2026-04-12",
+        "description": "Confirmed that the perceived need to toggle dark/light mode was actually caused by DarkLight.sh auto-selecting a Waybar style, not by wallust theme application or layout changes. Rolled back that coupling so light/dark now only handles mode-level wallpaper and appearance sync, while Waybar styles are changed only through the explicit styles menu; Super+T remains the global wallust theme switcher.",
+        "status": "completed",
+        "session_id": null
+      },
+      {
+        "title": "QuickShell and Waybar live-session verification",
+        "sub_feature": "hypr",
+        "date": "2026-04-12",
+        "description": "Still needs a desktop-session check that Super+A actually opens the Quickshell overview after login and that Waybar falls back cleanly when a crashing theme is selected, because the shell session here cannot fully prove the GUI behavior.",
+        "status": "pending",
+        "session_id": null
+      },
+      {
+        "title": "QuickShell carousel live-session verification",
+        "sub_feature": "quickshell",
+        "date": "2026-04-15",
+        "description": "Still needs a real desktop-session check that the new island-style workspace carousel shows five slots, keeps the active workspace centered, fades the edge cards, and wraps cleanly from the first workspace to the last and back again.",
+        "status": "pending",
+        "session_id": null
+      }
+    ],
+    "refactor": [],
+    "docs": []
+  }
+}

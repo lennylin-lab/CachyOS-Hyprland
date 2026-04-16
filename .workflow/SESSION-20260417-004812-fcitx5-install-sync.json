@@ -1,0 +1,54 @@
+{
+  "session_id": "SESSION-20260417-004812-fcitx5-install-sync",
+  "created_at": "2026-04-17T00:48:18+08:00",
+  "updated_at": "2026-04-17T00:48:18+08:00",
+  "source": "manual-session-sync",
+  "status": "in_progress",
+  "summary": "Recovered active progress for the CachyOS Intel install preset and Hyprland package manifest. The current uncommitted work adds the expected Fcitx5 desktop input stack to the installer package list and also leaves two helper scripts executable for direct TTY use.",
+  "scope": {
+    "area": "input-method",
+    "sub_feature": "cachyos-intel-install",
+    "reason": "No standard workflow session files existed under .workflow, so this record was backfilled from the current git working tree."
+  },
+  "tracked_files": [
+    {
+      "path": "install-scripts/01-hypr-pkgs.sh",
+      "change_type": "content",
+      "status": "modified",
+      "notes": "Added fcitx5, Chinese addons, Chewing, config tool, and GTK / Qt bridge packages."
+    },
+    {
+      "path": "tools/run-cachyos-intel-install.sh",
+      "change_type": "mode",
+      "status": "modified",
+      "notes": "Marked executable for direct invocation from a TTY install flow."
+    },
+    {
+      "path": "tools/verify-cachyos-hyprland.sh",
+      "change_type": "mode",
+      "status": "modified",
+      "notes": "Marked executable for direct post-install verification."
+    }
+  ],
+  "memory_updates": [
+    {
+      "type": "convention",
+      "target": ".ccw/specs/coding-conventions.md",
+      "text": "If an install preset should provide Chinese input out of the box, the package list must include fcitx5 core, Chinese addons, a configuration tool, and both GTK / Qt bridge packages."
+    }
+  ],
+  "progress": {
+    "completed": [
+      "Captured the active uncommitted installer delta into project-tech.json.",
+      "Stored a reusable convention for packaging the Fcitx5 desktop input stack."
+    ],
+    "remaining": [
+      "Decide whether fcitx5-chewing is part of the default preset or should remain optional beside a future fcitx5-rime path.",
+      "Run the install and verification scripts in the intended TTY / target environment before promoting the progress entry from in_progress to completed."
+    ]
+  },
+  "next_actions": [
+    "Validate the package set on a fresh CachyOS Hyprland install path.",
+    "If the preset is confirmed, update any package inventory or installer documentation that still omits the added Fcitx5 components."
+  ]
+}

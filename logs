@@ -1,0 +1,8 @@
+2026-04-14T01:33:21+0800 phase=start source=theme-changer pid=74589 style=/home/lenny/.config/waybar/style/[Extra] EverForest.css waybar_pids=none
+2026-04-14T01:33:23+0800 phase=done source=theme-changer pid=74589 style=/home/lenny/.config/waybar/style/[Extra] EverForest.css waybar_pids=74629
+2026-04-14T01:33:36+0800 phase=start source=waybar-style pid=75181 style=/home/lenny/.config/waybar/style/[Extra] Crimson.css waybar_pids=none
+2026-04-14T01:33:38+0800 phase=done source=waybar-style pid=75181 style=/home/lenny/.config/waybar/style/[Extra] Crimson.css waybar_pids=75205
+2026-04-14T01:33:42+0800 phase=start source=waybar-layout pid=75529 style=/home/lenny/.config/waybar/style/[Extra] Crimson.css waybar_pids=none
+2026-04-14T01:33:43+0800 phase=done source=waybar-layout pid=75529 style=/home/lenny/.config/waybar/style/[Extra] Crimson.css waybar_pids=75554
+2026-04-14T01:33:51+0800 phase=start source=wallpaper-select pid=76208 style=/home/lenny/.config/waybar/style/[Extra] Crimson.css waybar_pids=none
+2026-04-14T01:33:53+0800 phase=done source=wallpaper-select pid=76208 style=/home/lenny/.config/waybar/style/[Extra] Crimson.css waybar_pids=76232

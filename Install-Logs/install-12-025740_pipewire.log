@@ -1,0 +1,8 @@
+Failed to disable unit: Unit pulseaudio.socket does not exist
+Created symlink '/home/lenny/.config/systemd/user/sockets.target.wants/pipewire.socket' → '/usr/lib/systemd/user/pipewire.socket'.
+Created symlink '/home/lenny/.config/systemd/user/sockets.target.wants/pipewire-pulse.socket' → '/usr/lib/systemd/user/pipewire-pulse.socket'.
+Created symlink '/home/lenny/.config/systemd/user/pipewire-session-manager.service' → '/usr/lib/systemd/user/wireplumber.service'.
+Created symlink '/home/lenny/.config/systemd/user/pipewire.service.wants/wireplumber.service' → '/usr/lib/systemd/user/wireplumber.service'.
+Created symlink '/home/lenny/.config/systemd/user/default.target.wants/pipewire.service' → '/usr/lib/systemd/user/pipewire.service'.
+
+[32m[OK][m Pipewire Installation and services setup complete!
